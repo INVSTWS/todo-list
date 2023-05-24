@@ -1,0 +1,17 @@
+<h1>Welcome</h1>
+
+
+<%= form_for @new_todo, url: {action: :create} do |t|%>
+    <%= t.label :title%>
+    <%= t.text_field :title%>
+    <%=t.submit%>
+
+<%#В этом коде мы создаем форму для объекта @new_todo.
+ Мы указываем URL-адрес действия create в контроллере TodoItemsController,
+ используя параметр url:. Параметр url: находится в фигурных скобках, потому что он является хэшем.%>
+<%end%>
+
+<p>Your text:</p>
+<% @todos.each do |item|%>
+    <p><%=item.title%></p>
+<% end %>
